@@ -13,11 +13,12 @@ export class BookApiService {
 
   //Books
   getBookList():Observable<any[]>{
-    return this.http.get<any>(this.bookAPIUrl + '/books');
+    var full = this.bookAPIUrl + '/books';
+    return this.http.get<any>(full);
   }
 
   addBook(data: any){
-    return this.http.post(this.bookAPIUrl + 'books', data);
+    return this.http.post(this.bookAPIUrl + '/books', data);
   }
 
   updateBook(id:number|string, data:any){

@@ -1,1 +1,30 @@
-<p>add-edit-book works!</p>
+<form>
+    <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" class="form-control" [(ngModel)]="title" name="title">
+    </div>
+    <div class="mb-3">
+        <label for="bookTypeId" class="form-label">Book Type</label>
+        <input type="text" class="form-control" name="bookTypeId" [(ngModel)]="bookTypeId" *ngIf="book.id!=0" disabled="">
+        <select name="bookTypeId" id="bookTypeId" class="form-control" [(ngModel)]="bookTypeId" *ngIf="book.id==0">
+            <option *ngFor="let type of bookTypesList$|async" [value]="type.id">{{type.bookName}}</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="statusId" class="form-label">Status</label>
+        <!-- <input type="text" class="form-control" name="statusId" [(ngModel)]="statusId" *ngIf="book.id!=0" disabled=""> -->
+        <select name="statusId" id="statusId" class="form-control" [(ngModel)]="statusId" >
+            <option *ngFor="let status of statusList$|async" [value]="status.id">{{status.statusOption}}</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <input type="text" class="form-control" [(ngModel)]="description" name="description">
+    </div>
+    <button (click)="addBook()" *ngIf="book.id==0" class="btn btn-primary">
+        Add
+    </button>
+    <button (click)="updateBook()" *ngIf="book.id!=0" class="btn btn-primary">
+        Update
+    </button>
+</form>
