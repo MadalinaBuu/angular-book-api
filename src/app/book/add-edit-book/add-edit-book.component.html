@@ -4,6 +4,10 @@
         <input type="text" class="form-control" [(ngModel)]="title" name="title">
     </div>
     <div class="mb-3">
+        <label for="author" class="form-label">Author</label>
+        <input type="text" class="form-control" [(ngModel)]="author" name="author">
+    </div>
+    <div class="mb-3">
         <label for="bookTypeId" class="form-label">Book Type</label>
         <input type="text" class="form-control" name="bookTypeId" [(ngModel)]="bookTypeId" *ngIf="book.id!=0" disabled="">
         <select name="bookTypeId" id="bookTypeId" class="form-control" [(ngModel)]="bookTypeId" *ngIf="book.id==0">

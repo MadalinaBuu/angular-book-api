@@ -12,6 +12,7 @@
     <thead>
         <th>Id</th>
         <th>Title</th>
+        <th>Author</th>
         <th>Description</th>
         <th>Status</th>
         <th>Type</th>
@@ -21,6 +22,7 @@
         <tr *ngFor="let item of bookList$ | async">
             <td> {{item.id}}</td>
             <td> {{item.title}}</td>
+            <td> {{item.author}}</td>
             <td> {{item.description}}</td>
             <!-- <td> {{item.statusId}}</td> -->
             <td>{{bookStatusMap.get(item.statusId)}}</td>

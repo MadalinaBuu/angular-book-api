@@ -22,6 +22,7 @@ export class AddEditBookComponent implements OnInit {
   //status: string = "";
   statusId!:number;
   title: string = "";
+  author: string = "";
   description: string = "";
   bookTypeId!: number;
 
@@ -31,6 +32,7 @@ export class AddEditBookComponent implements OnInit {
     this.title = this.book.title;
     this.statusId = this.book.statusId;
     this.description = this.book.description;
+    this.author = this.book.author;
     this.bookTypeId = this.book.bookTypeId;
     this.statusList$ = this.service.getStatusList();
     this.bookList$ = this.service.getBookList();
@@ -41,6 +43,7 @@ export class AddEditBookComponent implements OnInit {
     var book ={
       statusId:this.statusId,
       title:this.title,
+      author:this.author,
       description:this.description,
       bookTypeId:this.bookTypeId
     }
@@ -66,6 +69,7 @@ export class AddEditBookComponent implements OnInit {
       id:this.id,
       statusId:this.statusId,
       title:this.title,
+      author:this.author,
       description:this.description,
       bookTypeId:this.bookTypeId
     }

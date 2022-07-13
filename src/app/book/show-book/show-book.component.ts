@@ -41,6 +41,7 @@ export class ShowBookComponent implements OnInit {
       id:0,
       status:null,
       title:null,
+      author:null,
       description:null,
       bookTypeId:null
     }
